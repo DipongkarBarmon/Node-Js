@@ -12,13 +12,12 @@ async function handleGenerateNewShortUrl(req,res) {
          shortId:shortId,
          redirectURL:body.url,
          visitHistry:[],
+         createdBy:req.user._id,
     });
-    const allUrls = await URL.find({});
-    return res.render('home',{
-      id: shortId,
-      urls:allUrls,
-    })
-    //return res.json({id: shortId});
+
+    // Store shortId in session before redirect
+    req.session.shortId = shortId;
+    return res.redirect('/');
 }
 
 

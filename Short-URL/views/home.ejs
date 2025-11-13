@@ -14,7 +14,7 @@
    <h2>URL Shortener</h2>
 
     <% if (locals.id) { %>
-      <p>URL Generate: http://localhost:8001/<%= id %></p>
+      <p>URL Generate: http://localhost:8001/url/<%= id %></p>
     <% } %>
     
    <div>
@@ -38,9 +38,9 @@
            <% urls.forEach((url,index) => { %>
                <tr>
                  <td><%= index + 1%></td>
-                 <td><%= url.shortId %></td>
+                 <td><%= url.shortId %></td>      
                  <td><%= url.redirectURL %></td>
-                 <td><%= url.visitHistry.length %></td>
+                 <td><%= (url.visitHistry || []).length %></td>
                </tr>
            <% }) %>
         </tbody>
