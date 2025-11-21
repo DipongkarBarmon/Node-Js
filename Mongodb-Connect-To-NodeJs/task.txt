@@ -1,0 +1,4 @@
+Mongoose 
+Schema - Define the structure 
+using Schema -create Model
+useing Model we do CRUD opreation (Create,Read,Update,Delete)
